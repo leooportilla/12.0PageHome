@@ -1,0 +1,496 @@
+@font-face {
+    font-family: Inter Regular;
+    src: url(../assets/fonts/InterRegular.ttf);
+}
+
+@font-face {
+    font-family: Inter Bold;
+    src: url(../assets/fonts/InterBold.ttf);
+}
+
+@font-face {
+    font-family: Inter Extra Bold;
+    src: url(../assets/fonts/InterExtraBold.ttf);
+}
+
+/* VARIABLE */
+// Colores primarios
+$Colores: ("Soft orange": hsl(35, 77%, 62%),
+    "Soft red": hsl(5, 85%, 63%),
+    "Off white": hsl(36, 100%, 99%),
+    "Grayish blue": hsl(233, 8%, 79%),
+    "Dark grayish blue": hsl(236, 13%, 42%),
+    "Very dark blue": hsl(240, 100%, 5%),
+
+    // Colores adiccionales
+    "White": rgb(250, 250, 250, ),
+    "Black": rgb(0, 0, 0),
+);
+
+// Fonts
+$Fonts: ("Fonts400": Inter Regular,
+    "Fonts700": Inter Bold,
+    "Fonts800": Inter Extra Bold,
+);
+
+// Resolucion
+$Resolucion: ("MovilSmall": 375px,
+    "MovilStandard": 480px,
+    "TabletSmall": 768px,
+    "TabletStandard": 960px,
+    "Laptop": 1024px,
+    "Desktop": 1328px,
+);
+
+/* Font Size */
+$FontSize: 15px;
+
+
+/* FUNCIONES */
+
+// Card New 
+@mixin CardNew () {
+    h3 {
+        color: map-get($Colores, "Off white");
+        font-family: map-get($Fonts, "Fonts700");
+        font-size: 1.2em;
+        margin-bottom: 0.8em;
+        cursor: pointer;
+
+        &:hover {
+            color: map-get($Colores, "Soft orange");
+        }
+    }
+
+    p {
+        color: map-get($Colores, "Grayish blue");
+        font-family: map-get($Fonts, "Fonts400");
+        font-size: 0.9em;
+        line-height: 1.5;
+    }
+}
+
+// Card Option
+@mixin CardOption {
+    display: flex;
+    flex-direction: row;
+
+    & img {
+        width: 6.7em;
+        height: 8.7em;
+        margin-right: 1em;
+    }
+
+    & div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h1 {
+            color: map-get($Colores, "Grayish blue");
+            font-family: map-get($Fonts, "Fonts800");
+            font-size: 1.8em;
+        }
+
+        h2 {
+            color: map-get($Colores, "Very dark blue");
+            font-family: map-get($Fonts, "Fonts700");
+            font-size: 1em;
+            cursor: pointer;
+
+            &:hover {
+                color: map-get($Colores, "Soft red");
+            }
+        }
+
+        p {
+            color: map-get($Colores, "Dark grayish blue");
+            font-family: map-get($Fonts, "Fonts400");
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+    }
+}
+
+// Reponsive Desing
+@mixin Tablet ($resolucion : 960px) {
+    @media screen and (max-width: $resolucion) {
+        @content;
+    }
+}
+
+@mixin Movil ($resolucion : 480px) {
+    @media screen and (max-width: $resolucion) {
+        @content;
+    }
+}
+
+/* Normalize */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Principal */
+body {
+    width: 100%;
+    height: auto;
+    background-color: map-get($Colores, "Off white");
+    padding: 0 11em;
+    padding-top: 6em;
+
+    /* Barra de menu */
+    & .header {
+        width: auto;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 4em;
+
+        &__containernav {
+
+            &-nav {
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                column-gap: 2em;
+                
+                & li {
+                    & a {
+                        text-decoration: none;
+                        color: map-get($Colores, "Dark grayish blue");
+                        font-family: map-get($Fonts, "Fonts400");
+                        cursor: pointer;
+    
+                        &:hover {
+                            color: map-get($Colores, "Soft red");
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    /* Titulo y Noticas*/
+    & .main {
+        width: 100%;
+        height: 30em;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        &__holder {
+            width: 100%;
+            height: 100%;
+            grid-column: 1/3;
+            grid-row: 1/3;
+
+            &-containerimage {
+                width: 100%;
+                height: 60%;
+                background-image: url(../assets/images/image__web3Desktop.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            &-container {
+                display: flex;
+                flex-direction: row;
+                padding-top: 2em;
+
+                h1 {
+                    width: 55%;
+                    font-family: map-get($Fonts, "Fonts800");
+                    color: map-get($Colores, "Very dark blue");
+                    font-size: 3.5em;
+                    line-height: 1;
+                    padding-right: 0.4em;
+                }
+
+                div {
+                    width: 45%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    p {
+                        font-family: map-get($Fonts, "Fonts400");
+                        color: map-get($Colores, "Dark grayish blue");
+                        font-size: 0.9em;
+                        line-height: 1.7;
+                        margin-bottom: 1.5em;
+                    }
+
+                    button {
+                        width: 12em;
+                        height: 3.5em;
+                        background-color: map-get($Colores, "Soft red");
+                        color: map-get($Colores, "Off white");
+                        font-family: map-get($Fonts, "Fonts400");
+                        letter-spacing: 5px;
+                        border: 0;
+                        border-radius: 0;
+                        text-transform: uppercase;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: map-get($Colores, "Very dark blue");
+                        }
+                    }
+
+                }
+            }
+        }
+
+        /* Noticias */
+        &__aside {
+            grid-column: 3/4;
+            grid-row: 1/3;
+            margin-left: 2em;
+            padding: 1.6em 1.5em;
+            background-color: map-get($Colores, "Very dark blue");
+
+            &-title {
+                font-family: map-get($Fonts, "Fonts800");
+                color: map-get($Colores, "Soft orange");
+                font-size: 2.5em;
+            }
+
+            &-hydrogen {
+                margin: 1.5em 0;
+                @include CardNew();
+            }
+
+            &-downsides {
+                padding: 1.5em 0;
+                border-top: 1px solid map-get($Colores, "Grayish blue");
+                border-bottom: 1px solid map-get($Colores, "Grayish blue");
+                @include CardNew();
+            }
+
+            &-funding {
+                margin: 1.5em 0;
+                @include CardNew();
+            }
+        }
+    }
+
+    /* Opciones */
+    & .footer {
+        margin-top: 4em;
+
+        &__option {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            grid-column-gap: 3em;
+
+            &-one {
+                @include CardOption();
+            }
+
+            &-two {
+                @include CardOption();
+            }
+
+            &-three {
+                @include CardOption();
+            }
+        }
+
+        /* Autores */
+        &__author {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: map-get($Colores, "Very dark blue");
+            font-family: map-get($Fonts, "Fonts700");
+            font-size: 1em;
+            margin-top: 2em;
+
+            &-atributos {
+                font-size: inherit;
+            }
+
+            &-enlace {
+                text-decoration: none;
+                color: map-get($Colores, "Very dark blue");
+                margin-left: 0.3em;
+                margin-right: 0.3em;
+                cursor: pointer;
+
+                &:hover {
+                    color: map-get($Colores, "Soft red");
+                }
+            }
+        }
+    }
+
+}
+
+@include Movil (map-get($Resolucion, "MovilSmall")) {
+    /* Fondo */
+    body {
+        padding: 2em 1em;
+        position: relative;
+
+        /* Barra de menu */
+        & .header {
+            width: auto;
+            height: auto;
+            align-items: center;
+            margin-bottom: 2em;
+
+            &__container {
+
+                & img {
+                    width: 4em;
+                }
+            }
+
+            &__containernav {
+                width: 2.5em;
+                height: 5em;
+                position: absolute;
+                right: 1em;
+                top: 0;
+                background-image: url(../assets/images/icon__menu.svg);
+                background-repeat: no-repeat;
+                background-position: right 0 top 2.5em;
+                background-size: 2.5em;
+
+                &:hover {
+                    padding-top: 10em;
+                    padding-left: 1em;
+                    position: absolute;
+                    right: 1em;
+                    top: 0;
+                    width: 60%;
+                    height: 100%;
+                    transition: width .5s, height 0s;
+                    background-image: url(../assets/images/icon__menuclose.svg);
+                    background-repeat: no-repeat;
+                    background-position: right 0 top 2.5em;
+                    background-size: 1.5em;
+                    background-color: map-get($Colores, "Off white");
+
+                    .header__containernav-fondo {
+                        position: absolute;
+                        width: 60%;
+                        height: 100%;
+                        left: -60%;
+                        top: 0;
+                        background-color: map-get($Colores, "Very dark blue");
+                        opacity: .35;
+                        }
+
+                    .header__containernav-nav {
+                        list-style: none;
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 1.5em;
+
+                        & li {
+
+                            & a {
+                                text-decoration: none;
+                                color: map-get($Colores, "Very dark blue");
+                                font-family: map-get($Fonts, "Fonts700");
+                                
+                                &:hover {
+                                    color: map-get($Colores, "Soft red");
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &-nav {
+                    display: none;
+                }
+            }
+        }
+
+        /* Tiutlo */
+        & .main {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+
+            &__holder {
+
+                &-containerimage {
+                    height: 20em;
+                    background-image: url(../assets/images/image__web3Mobile.jpg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+
+                &-container {
+                    flex-direction: column;
+                    padding: 0;
+
+                    h1 {
+                        margin: 0.5em 0;
+                        width: 100%;
+                        font-size: 2.5em;
+                        padding: 0;
+                    }
+
+                    div {
+                        width: 100%;
+
+                        p {
+                            font-size: .95em;
+                        }
+
+                        button {
+                            width: 13.5em;
+                            height: 3em;
+                        }
+
+                    }
+                }
+            }
+
+            &__aside {
+                margin: 0;
+                margin-top: 4em;
+
+                &-hydrogen {
+                    margin: 1em 0;
+                }
+
+                &-downsides {
+                    padding: 1em 0;
+
+                }
+
+                &-funding {
+                    margin: 1em 0;
+                }
+            }
+        }
+
+        /* La seccion de noticia no sufrio cambio, sus propiedad se adaptaban bien al diseño reponsive */
+
+        /* Opciones */
+        & .footer {
+
+            &__option {
+                flex-direction: column;
+                row-gap: 2em;
+            }
+
+            &__author {
+                font-size: 0.6em;
+            }
+        }
+    }
+}

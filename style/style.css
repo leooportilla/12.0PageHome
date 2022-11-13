@@ -1,1 +1,452 @@
-/*# sourceMappingURL=style.css.map */
+@charset "UTF-8";
+@font-face {
+  font-family: Inter Regular;
+  src: url(../assets/fonts/InterRegular.ttf);
+}
+@font-face {
+  font-family: Inter Bold;
+  src: url(../assets/fonts/InterBold.ttf);
+}
+@font-face {
+  font-family: Inter Extra Bold;
+  src: url(../assets/fonts/InterExtraBold.ttf);
+}
+/* VARIABLE */
+/* Font Size */
+/* FUNCIONES */
+/* Normalize */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Principal */
+body {
+  width: 100%;
+  height: auto;
+  background-color: hsl(36deg, 100%, 99%);
+  padding: 0 11em;
+  padding-top: 6em;
+  /* Barra de menu */
+  /* Titulo y Noticas*/
+  /* Opciones */
+}
+body .header {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4em;
+}
+body .header__containernav-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 2em;
+       column-gap: 2em;
+}
+body .header__containernav-nav li a {
+  text-decoration: none;
+  color: hsl(236deg, 13%, 42%);
+  font-family: Inter Regular;
+  cursor: pointer;
+}
+body .header__containernav-nav li a:hover {
+  color: hsl(5deg, 85%, 63%);
+}
+body .main {
+  width: 100%;
+  height: 30em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  /* Noticias */
+}
+body .main__holder {
+  width: 100%;
+  height: 100%;
+  grid-column: 1/3;
+  grid-row: 1/3;
+}
+body .main__holder-containerimage {
+  width: 100%;
+  height: 60%;
+  background-image: url(../assets/images/image__web3Desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body .main__holder-container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 2em;
+}
+body .main__holder-container h1 {
+  width: 55%;
+  font-family: Inter Extra Bold;
+  color: hsl(240deg, 100%, 5%);
+  font-size: 3.5em;
+  line-height: 1;
+  padding-right: 0.4em;
+}
+body .main__holder-container div {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .main__holder-container div p {
+  font-family: Inter Regular;
+  color: hsl(236deg, 13%, 42%);
+  font-size: 0.9em;
+  line-height: 1.7;
+  margin-bottom: 1.5em;
+}
+body .main__holder-container div button {
+  width: 12em;
+  height: 3.5em;
+  background-color: hsl(5deg, 85%, 63%);
+  color: hsl(36deg, 100%, 99%);
+  font-family: Inter Regular;
+  letter-spacing: 5px;
+  border: 0;
+  border-radius: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+body .main__holder-container div button:hover {
+  background-color: hsl(240deg, 100%, 5%);
+}
+body .main__aside {
+  grid-column: 3/4;
+  grid-row: 1/3;
+  margin-left: 2em;
+  padding: 1.6em 1.5em;
+  background-color: hsl(240deg, 100%, 5%);
+}
+body .main__aside-title {
+  font-family: Inter Extra Bold;
+  color: hsl(35deg, 77%, 62%);
+  font-size: 2.5em;
+}
+body .main__aside-hydrogen {
+  margin: 1.5em 0;
+}
+body .main__aside-hydrogen h3 {
+  color: hsl(36deg, 100%, 99%);
+  font-family: Inter Bold;
+  font-size: 1.2em;
+  margin-bottom: 0.8em;
+  cursor: pointer;
+}
+body .main__aside-hydrogen h3:hover {
+  color: hsl(35deg, 77%, 62%);
+}
+body .main__aside-hydrogen p {
+  color: hsl(233deg, 8%, 79%);
+  font-family: Inter Regular;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+body .main__aside-downsides {
+  padding: 1.5em 0;
+  border-top: 1px solid hsl(233deg, 8%, 79%);
+  border-bottom: 1px solid hsl(233deg, 8%, 79%);
+}
+body .main__aside-downsides h3 {
+  color: hsl(36deg, 100%, 99%);
+  font-family: Inter Bold;
+  font-size: 1.2em;
+  margin-bottom: 0.8em;
+  cursor: pointer;
+}
+body .main__aside-downsides h3:hover {
+  color: hsl(35deg, 77%, 62%);
+}
+body .main__aside-downsides p {
+  color: hsl(233deg, 8%, 79%);
+  font-family: Inter Regular;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+body .main__aside-funding {
+  margin: 1.5em 0;
+}
+body .main__aside-funding h3 {
+  color: hsl(36deg, 100%, 99%);
+  font-family: Inter Bold;
+  font-size: 1.2em;
+  margin-bottom: 0.8em;
+  cursor: pointer;
+}
+body .main__aside-funding h3:hover {
+  color: hsl(35deg, 77%, 62%);
+}
+body .main__aside-funding p {
+  color: hsl(233deg, 8%, 79%);
+  font-family: Inter Regular;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+body .footer {
+  margin-top: 4em;
+  /* Autores */
+}
+body .footer__option {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  grid-column-gap: 3em;
+}
+body .footer__option-one {
+  display: flex;
+  flex-direction: row;
+}
+body .footer__option-one img {
+  width: 6.7em;
+  height: 8.7em;
+  margin-right: 1em;
+}
+body .footer__option-one div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .footer__option-one div h1 {
+  color: hsl(233deg, 8%, 79%);
+  font-family: Inter Extra Bold;
+  font-size: 1.8em;
+}
+body .footer__option-one div h2 {
+  color: hsl(240deg, 100%, 5%);
+  font-family: Inter Bold;
+  font-size: 1em;
+  cursor: pointer;
+}
+body .footer__option-one div h2:hover {
+  color: hsl(5deg, 85%, 63%);
+}
+body .footer__option-one div p {
+  color: hsl(236deg, 13%, 42%);
+  font-family: Inter Regular;
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+body .footer__option-two {
+  display: flex;
+  flex-direction: row;
+}
+body .footer__option-two img {
+  width: 6.7em;
+  height: 8.7em;
+  margin-right: 1em;
+}
+body .footer__option-two div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .footer__option-two div h1 {
+  color: hsl(233deg, 8%, 79%);
+  font-family: Inter Extra Bold;
+  font-size: 1.8em;
+}
+body .footer__option-two div h2 {
+  color: hsl(240deg, 100%, 5%);
+  font-family: Inter Bold;
+  font-size: 1em;
+  cursor: pointer;
+}
+body .footer__option-two div h2:hover {
+  color: hsl(5deg, 85%, 63%);
+}
+body .footer__option-two div p {
+  color: hsl(236deg, 13%, 42%);
+  font-family: Inter Regular;
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+body .footer__option-three {
+  display: flex;
+  flex-direction: row;
+}
+body .footer__option-three img {
+  width: 6.7em;
+  height: 8.7em;
+  margin-right: 1em;
+}
+body .footer__option-three div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .footer__option-three div h1 {
+  color: hsl(233deg, 8%, 79%);
+  font-family: Inter Extra Bold;
+  font-size: 1.8em;
+}
+body .footer__option-three div h2 {
+  color: hsl(240deg, 100%, 5%);
+  font-family: Inter Bold;
+  font-size: 1em;
+  cursor: pointer;
+}
+body .footer__option-three div h2:hover {
+  color: hsl(5deg, 85%, 63%);
+}
+body .footer__option-three div p {
+  color: hsl(236deg, 13%, 42%);
+  font-family: Inter Regular;
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+body .footer__author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(240deg, 100%, 5%);
+  font-family: Inter Bold;
+  font-size: 1em;
+  margin-top: 2em;
+}
+body .footer__author-atributos {
+  font-size: inherit;
+}
+body .footer__author-enlace {
+  text-decoration: none;
+  color: hsl(240deg, 100%, 5%);
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+  cursor: pointer;
+}
+body .footer__author-enlace:hover {
+  color: hsl(5deg, 85%, 63%);
+}
+
+@media screen and (max-width: 375px) {
+  /* Fondo */
+  body {
+    padding: 2em 1em;
+    position: relative;
+    /* Barra de menu */
+    /* Tiutlo */
+    /* La seccion de noticia no sufrio cambio, sus propiedad se adaptaban bien al diseño reponsive */
+    /* Opciones */
+  }
+  body .header {
+    width: auto;
+    height: auto;
+    align-items: center;
+    margin-bottom: 2em;
+  }
+  body .header__container img {
+    width: 4em;
+  }
+  body .header__containernav {
+    width: 2.5em;
+    height: 5em;
+    position: absolute;
+    right: 1em;
+    top: 0;
+    background-image: url(../assets/images/icon__menu.svg);
+    background-repeat: no-repeat;
+    background-position: right 0 top 2.5em;
+    background-size: 2.5em;
+  }
+  body .header__containernav:hover {
+    padding-top: 10em;
+    padding-left: 1em;
+    position: absolute;
+    right: 1em;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    transition: width 0.5s, height 0s;
+    background-image: url(../assets/images/icon__menuclose.svg);
+    background-repeat: no-repeat;
+    background-position: right 0 top 2.5em;
+    background-size: 1.5em;
+    background-color: hsl(36deg, 100%, 99%);
+  }
+  body .header__containernav:hover .header__containernav-fondo {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    left: -60%;
+    top: 0;
+    background-color: hsl(240deg, 100%, 5%);
+    opacity: 0.35;
+  }
+  body .header__containernav:hover .header__containernav-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5em;
+  }
+  body .header__containernav:hover .header__containernav-nav li a {
+    text-decoration: none;
+    color: hsl(240deg, 100%, 5%);
+    font-family: Inter Bold;
+  }
+  body .header__containernav:hover .header__containernav-nav li a:hover {
+    color: hsl(5deg, 85%, 63%);
+  }
+  body .header__containernav-nav {
+    display: none;
+  }
+  body .main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  body .main__holder-containerimage {
+    height: 20em;
+    background-image: url(../assets/images/image__web3Mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  body .main__holder-container {
+    flex-direction: column;
+    padding: 0;
+  }
+  body .main__holder-container h1 {
+    margin: 0.5em 0;
+    width: 100%;
+    font-size: 2.5em;
+    padding: 0;
+  }
+  body .main__holder-container div {
+    width: 100%;
+  }
+  body .main__holder-container div p {
+    font-size: 0.95em;
+  }
+  body .main__holder-container div button {
+    width: 13.5em;
+    height: 3em;
+  }
+  body .main__aside {
+    margin: 0;
+    margin-top: 4em;
+  }
+  body .main__aside-hydrogen {
+    margin: 1em 0;
+  }
+  body .main__aside-downsides {
+    padding: 1em 0;
+  }
+  body .main__aside-funding {
+    margin: 1em 0;
+  }
+  body .footer__option {
+    flex-direction: column;
+    row-gap: 2em;
+  }
+  body .footer__author {
+    font-size: 0.6em;
+  }
+}/*# sourceMappingURL=style.css.map */
